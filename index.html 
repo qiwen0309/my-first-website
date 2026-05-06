@@ -1,1 +1,35 @@
-！
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=""UTG-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinoki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+    <link rel="preconnect" href="">
+</head>
+<body>
+
+<!-- Pgae: Home -->
+<div class="page active" id="page-home">
+    <!-- Mobile -->
+    <div class="home-mobile">
+        <div class="home-hero">
+            <img class="home-hero-bg" src="" alt="">
+            <div class="home-hero-content">
+                <div class="home-logo-area">
+                    <h1 class="home-title">Hinoki</h1>
+                    <div class="home-divider"></div>
+                    <p class"home-subtitle"></p>
+                </div>
+            </div>
+            <div class="home-footer-cta">
+                <button class="btn-primary" data-nav="product">
+                    <span>START ORDERING</span>
+                    <svg width="" height="" >
+                </button>
+            </div>
+        </div>
+    </div>
+
+
