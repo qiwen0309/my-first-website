@@ -30,5 +30,18 @@
             </div>
         </div>
     </div>
+    <!-- DESKTOP -->
+    <div class="home-desktop">
+        <nav class="topnav">
+            <div class="topnav-inner">
+                <div class="topnav-logo logo-font" data-nav="home">Hinoki</div>
+                <div class="topnav-links">
+                    <a class="nav-link active" data-nav="home">HOME</a>
+                    <a class="nav-link" data-nav="ai-chef">AI CHEF</a>
+                    <a class="nav-link" data-nav="product">MENU</a>
+                    <a class="nav-link" data-nav="gift">GIFT CARD</a>
+                </div>
+
+
 
 
