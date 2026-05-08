@@ -1,0 +1,26 @@
+/* BUTTONS */
+.btn-primary {
+    display: inline-flex; align-items: center;
+    background: var(--gold); color: #fff;
+    font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px;
+    padding: 16px 32px; border: none; cursor: pointer;   
+  }
+
+.btn-dark {
+    background: var(--dark-nav); color: #fff;
+    font-family: 'Noto Serif', serif; font-size: 14px; font-weight: 400;
+    padding: 10px 20px; border: none; cursor: pointer;
+  }
+/* TOP NAV */
+.topnav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(251,249,245,0.85); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(209,197,180,0.3);
+    height: 108px; display: flex; align-items: center;
+  }
+.topnav-inner {
+width: 100%; max-width: 1280px; margin: 0 auto;
+padding: 0 48px; display: flex; align-items: center; justify-content: space-between;
+}
+.topnav-logo { font-size: 24px; color: var(--dark-2); cursor: pointer; }
+.topnav-links { display: flex; gap: 32px; }
