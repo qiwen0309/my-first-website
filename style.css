@@ -35,20 +35,31 @@
   .label-sm { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--text-mid); text-transform: uppercase; }
   .label-gold { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
   .label-required { font-family: 'Manrope', sans-serif; font-size: 10px; color: rgba(186,26,26,0.7); }
-  
+
 /* BUTTONS */
 .btn-primary {
     display: inline-flex; align-items: center;
     background: var(--gold); color: #fff;
     font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px;
     padding: 16px 32px; border: none; cursor: pointer;   
+    transition: opacity 0.2s;
   }
+.btn-primary:hover { opacity: 0.88; }
+.btn-full { width: 100%; justify-content: center; }
 
 .btn-dark {
     background: var(--dark-nav); color: #fff;
     font-family: 'Noto Serif', serif; font-size: 14px; font-weight: 400;
     padding: 10px 20px; border: none; cursor: pointer;
   }
+
+.btn-outline {
+display: block; width: 100%; text-align: center;
+background: transparent; color: var(--gold);
+font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700;
+padding: 14px; border: 1.5px solid var(--gold); cursor: pointer;
+margin-top: 10px;
+}
 /* TOP NAV */
 .topnav {
     position: sticky; top: 0; z-index: 100;
@@ -62,3 +73,32 @@ padding: 0 48px; display: flex; align-items: center; justify-content: space-betw
 }
 .topnav-logo { font-size: 24px; color: var(--dark-2); cursor: pointer; }
 .topnav-links { display: flex; gap: 32px; }
+.nav-link {
+    font-family: 'Noto Serif', serif; font-size: 14px; font-weight: 400;
+    color: rgba(30,47,42,0.6); cursor: pointer; transition: color 0.2s;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--dark-nav); }
+  .topnav-right { display: flex; align-items: center; gap: 20px; }
+  .topnav-cart { position: relative; }
+
+  /* MOBILE HEADER */
+.mobile-header {
+    background: rgba(251,249,245,0.92); backdrop-filter: blur(8px);
+    height: 80px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; border-bottom: 1px solid rgba(209,197,180,0.2);
+  }
+  .mobile-logo { font-size: 24px; color: var(--dark-2); }
+
+  /* Sticky wrapper for product page: header + search + category nav stick together */
+.product-mobile-sticky {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,249,245,0.97); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(209,197,180,0.25);
+  }
+  /* Slim category tab bar inside the sticky header */
+.product-cat-bar {
+    display: flex; gap: 0; padding: 0 32px;
+    border-top: 1px solid rgba(209,197,180,0.2);
+    overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none;
+  }
+.product-cat-bar::-webkit-scrollbar { display: none; }
