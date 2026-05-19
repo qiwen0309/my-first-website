@@ -1,3 +1,41 @@
+/* CSS VARIABLES */
+:root {
+    --bg: #fbf9f4;
+    --bg-white: #ffffff;
+    --gold: #775a19;
+    --gold-light: #c5a059;
+    --dark: #1b1c19;
+    --dark-2: #2a2726;
+    --text-mid: #4e4639;
+    --text-muted: #7f7667;
+    --card-bg: #f5f3ee;
+    --card-bg-2: #f4f1e9;
+    --border: #d1c5b4;
+    --border-light: #e4e2dd;
+    --gold-tint: rgba(119,90,25,0.05);
+    --dark-nav: #1e2f2a;
+  }
+  
+  /* RESET */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', 'Manrope', sans-serif; background: var(--bg); color: var(--dark); min-height: 100vh; }
+  a { text-decoration: none; color: inherit; cursor: pointer; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+  input { font-family: inherit; }
+  ul { list-style: none; }
+  img { display: block; max-width: 100%; }
+  
+  /* PAGE ROUTING */
+  .page { display: none; min-height: 100vh; }
+  .page.active { display: block; }
+  
+  /* TYPOGRAPHY HELPERS */
+  .logo-font { font-family: 'Noto Serif', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
+  .label-sm { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--text-mid); text-transform: uppercase; }
+  .label-gold { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+  .label-required { font-family: 'Manrope', sans-serif; font-size: 10px; color: rgba(186,26,26,0.7); }
+  
 /* BUTTONS */
 .btn-primary {
     display: inline-flex; align-items: center;
