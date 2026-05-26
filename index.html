@@ -366,6 +366,164 @@
   </div>
 </div>
 
+<!-- PAGE: CHECKOUT -->
+<div class="page" id="page-checkout">
+  <div class="checkout-mobile">
+    <header class="mobile-header">
+      <button class="icon-btn back-btn" data-nav="cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="#1b1c19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="logo-font mobile-logo">Hinoki</span>
+    </header>
+    <div class="checkout-page-header">
+      <h2 class="checkout-title">Checkout</h2>
+      <span class="label-sm">CURATING JAPANESE ESSENCE</span>
+      <div class="checkout-divider"></div>
+    </div>
+    <div class="checkout-section">
+      <h3 class="checkout-section-title">How to get it</h3>
+      <div class="detail-pickup-option selected">
+        <div class="pickup-radio"></div>
+        <div class="pickup-info">
+          <div class="pickup-type">Store pickup</div>
+          <div class="pickup-name">Hinoki Japanese Pantry</div>
+          <div class="pickup-addr">279 Smith St Fitzroy VIC</div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-section">
+      <h3 class="checkout-section-title">Pickup Time</h3>
+      <div class="time-slot-wrap">
+        <span class="label-sm">SELECT TIME SLOT</span>
+        <div class="time-slot-options">
+          <button class="time-slot active" data-time="1:00 p.m.">1:00 p.m.</button>
+          <button class="time-slot" data-time="2:00 p.m.">2:00 p.m.</button>
+          <button class="time-slot" data-time="3:00 p.m.">3:00 p.m.</button>
+          <button class="time-slot" data-time="4:00 p.m.">4:00 p.m.</button>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-section">
+      <h3 class="checkout-section-title">Payment Selection</h3>
+      <button class="btn-apple-pay" data-payment="apple">APPLE PAY</button>
+      <div class="or-divider"><div class="or-line"></div><span>OR CREDIT CARD</span><div class="or-line"></div></div>
+      <div class="card-form">
+        <div class="card-field">
+          <label class="card-label">CARD NUMBER</label>
+          <input class="card-input" type="text" placeholder="0000 0000 0000 0000">
+        </div>
+        <div class="card-row">
+          <div class="card-field">
+            <label class="card-label">EXPIRY DATE</label>
+            <input class="card-input" type="text" placeholder="MM/YY">
+          </div>
+          <div class="card-field">
+            <label class="card-label">CVC</label>
+            <input class="card-input" type="text" placeholder="000">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-summary-box">
+      <h3 class="cart-summary-title">Order Summary</h3>
+      <div id="checkout-items-mobile"></div>
+      <div class="checkout-totals" id="checkout-totals-mobile"></div>
+    </div>
+    <button class="btn-primary btn-full checkout-place-btn" data-nav="confirmation">Place order</button>
+  </div>
+  <div class="checkout-desktop">
+    <nav class="topnav">
+      <div class="topnav-inner">
+        <div class="topnav-logo logo-font" data-nav="home">Hinoki</div>
+        <div class="topnav-links">
+          <a class="nav-link" data-nav="home">HOME</a>
+          <a class="nav-link" data-nav="ai-chef">AI CHEF</a>
+          <a class="nav-link" data-nav="product">MENU</a>
+          <a class="nav-link" href="#">GIFT CARD</a>
+        </div>
+        <button class="btn-dark" data-nav="product">BOOK NOW</button>
+      </div>
+    </nav>
+    <div class="checkout-desktop-body">
+      <div class="checkout-desktop-header">
+        <span class="label-gold">Checkout Journey</span>
+        <h1 class="checkout-desktop-title">Checkout</h1>
+      </div>
+      <div class="checkout-desktop-main">
+        <div class="checkout-desktop-left">
+          <div class="checkout-section">
+            <div class="checkout-step-header">
+              <div class="step-num">01</div>
+              <h3 class="checkout-section-title">Pickup Time</h3>
+            </div>
+            <div class="time-slot-wrap">
+              <span class="label-sm">SELECT TIME SLOT</span>
+              <div class="time-slot-options">
+                <button class="time-slot active" data-time="1:00 p.m.">1:00 p.m.</button>
+                <button class="time-slot" data-time="2:00 p.m.">2:00 p.m.</button>
+                <button class="time-slot" data-time="3:00 p.m.">3:00 p.m.</button>
+                <button class="time-slot" data-time="4:00 p.m.">4:00 p.m.</button>
+              </div>
+            </div>
+          </div>
+          <div class="checkout-section">
+            <div class="checkout-step-header">
+              <div class="step-num">02</div>
+              <h3 class="checkout-section-title">Payment Selection</h3>
+            </div>
+            <button class="btn-apple-pay" data-payment="apple">APPLE PAY</button>
+          </div>
+          <div class="checkout-section">
+            <div class="checkout-step-header">
+              <div class="step-num">03</div>
+              <h3 class="checkout-section-title">PAYMENT</h3>
+            </div>
+            <div class="payment-method-btns">
+              <button class="payment-method-btn active" data-payment="apple"><span>APPLE PAY</span></button>
+              <button class="payment-method-btn" data-payment="card"><span>CREDIT CARD</span></button>
+            </div>
+            <div class="card-form">
+              <div class="card-field">
+                <label class="card-label">CARD NUMBER</label>
+                <input class="card-input" type="text" placeholder="**** **** **** ****">
+              </div>
+              <div class="card-row">
+                <div class="card-field">
+                  <label class="card-label">EXPIRY DATE</label>
+                  <input class="card-input" type="text" placeholder="MM/YY">
+                </div>
+                <div class="card-field">
+                  <label class="card-label">CVC</label>
+                  <input class="card-input" type="text" placeholder="123">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-desktop-right">
+          <div class="checkout-aside">
+            <h3 class="checkout-aside-title">ORDER SUMMARY</h3>
+            <div id="checkout-items-desktop"></div>
+            <div class="checkout-totals" id="checkout-totals-desktop"></div>
+            <button class="btn-primary btn-full checkout-place-btn" data-nav="confirmation">PLACE ORDER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="logo-font footer-logo">Hinoki</span>
+        <div class="footer-links">
+          <a href="#">PRIVACY</a><div class="footer-divider"></div>
+          <a href="#">ACCESSIBILITY</a><div class="footer-divider"></div>
+          <a href="#">CONTACT</a>
+        </div>
+        <span class="footer-copy">© 2024 HINOKI. DESIGNED FOR SILENCE.</span>
+      </div>
+    </footer>
+  </div>
+</div>
+
 <script src="/Users/qiwenshan/my-first-website/app.js"></script>
 </body>
 
