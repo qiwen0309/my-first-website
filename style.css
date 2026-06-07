@@ -629,9 +629,341 @@ padding: 0 48px; display: flex; align-items: center; justify-content: space-betw
 .checkout-item-sub { font-family: 'Manrope', sans-serif; font-size: 10px; color: var(--text-mid); margin-top: 2px; }
 .checkout-item-price { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--dark); }
 
+/* CONFIRMATION */
+.confirmation-wrap { background: #fdfcf9; min-height: 100vh; }
+.confirmation-body {
+  max-width: 600px; margin: 0 auto; padding: 48px 32px 80px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.confirmation-icon { margin-bottom: 32px; }
+.confirmation-icon-ring {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.confirmation-title {
+  font-family: 'Noto Serif', serif; font-size: 36px; font-weight: 300;
+  color: #1c1c1c; line-height: 1.2; margin-bottom: 16px;
+}
+.confirmation-divider { width: 60px; height: 1px; background: rgba(197,160,89,0.4); margin-bottom: 16px; }
+.confirmation-sub {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 300;
+  color: #6b6b6b; margin-bottom: 32px;
+}
+.confirmation-order-box { width: 100%; background: #f7f5f0; padding: 24px; margin-bottom: 32px; text-align: left; }
+.confirmation-order-inner { }
+.confirmation-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid rgba(209,197,180,0.2);
+}
+.confirmation-item-name {
+  font-family: 'Noto Serif', serif; font-size: 18px; font-weight: 400; color: #1c1c1c;
+}
+.confirmation-item-qty { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 300; color: #6b6b6b; }
 
+/* AI CHEF */
+.aichef-desktop { display: none; }
+.aichef-mobile { background: var(--bg); min-height: 100vh; padding-bottom: 40px; }
+.aichef-intro { padding: 24px 32px; }
+.aichef-title {
+  font-family: 'Noto Serif', serif; font-size: 36px; font-weight: 400;
+  color: var(--dark); margin-bottom: 8px;
+}
+.aichef-sub { font-family: 'Manrope', sans-serif; font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+.aichef-questions { padding: 0 32px; }
+.aichef-q { padding: 24px 0; border-bottom: 1px solid rgba(209,197,180,0.2); }
+.aichef-q-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+.q-num { font-family: 'Noto Serif', serif; font-size: 24px; font-weight: 400; color: var(--gold); flex-shrink: 0; }
+.q-text { font-family: 'Noto Serif', serif; font-size: 24px; font-weight: 400; color: var(--dark); line-height: 1.2; }
+.aichef-options-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.aichef-opt {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 400;
+  color: var(--text-mid); background: var(--bg);
+  border: 1px solid var(--border); padding: 10px 20px; cursor: pointer;
+  transition: all 0.2s;
+}
+.aichef-opt.active, .aichef-opt:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+.aichef-options-wrap { display: flex; gap: 8px; flex-wrap: wrap; }
+.aichef-opt-pill {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 400;
+  color: var(--text-mid); background: none;
+  border: 1px solid var(--border); padding: 8px 16px; cursor: pointer;
+  transition: all 0.2s;
+}
+.aichef-opt-pill.active, .aichef-opt-pill:hover { border-color: var(--gold); color: var(--gold); }
+.aichef-style-options { display: flex; flex-direction: column; gap: 8px; }
+.aichef-style-card {
+  display: flex; flex-direction: column; gap: 4px; text-align: left;
+  background: var(--card-bg); padding: 16px; cursor: pointer;
+  border: 2px solid transparent; transition: border-color 0.2s;
+  position: relative; overflow: hidden;
+}
+.aichef-style-card.active { border-color: var(--gold); }
+.style-name { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 600; color: var(--dark); }
+.style-desc { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.5; }
+.aichef-checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.aichef-check {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg); border: 1px solid var(--border-light); padding: 12px 16px; cursor: pointer;
+}
+.aichef-check input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; }
+.aichef-check span { font-family: 'Manrope', sans-serif; font-size: 14px; color: var(--text-mid); }
+.aichef-submit-wrap { padding: 32px 32px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.aichef-note { font-family: 'Manrope', sans-serif; font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+
+/* AI Chef desktop */
+.aichef-desktop-body { max-width: 1280px; margin: 0 auto; padding: 0 192px 80px; }
+.aichef-desktop-intro { padding: 64px 0 40px; }
+.aichef-desktop-title {
+  font-family: 'Noto Serif', serif; font-size: 48px; font-weight: 400;
+  color: var(--dark); margin-bottom: 12px;
+}
+.aichef-desktop-questions { display: flex; flex-direction: column; gap: 0; }
+
+/* RESULT */
+.result-desktop { display: none; }
+.result-mobile { background: var(--bg); min-height: 100vh; padding-bottom: 40px; }
+.result-header { padding: 24px 32px; }
+.result-title {
+  font-family: 'Noto Serif', serif; font-size: 36px; font-weight: 400;
+  color: var(--dark); margin-bottom: 4px;
+}
+.result-card-wrap { padding: 0 32px; }
+.result-card { background: var(--card-bg); overflow: hidden; }
+.result-card-img {
+  width: 100%; height: 200px;
+  background: url('../assets/images/result-bg.png') center/cover no-repeat;
+  background-color: #f0eee9;
+}
+.result-card-body { padding: 24px; }
+.result-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.result-path { font-family: 'Manrope', sans-serif; font-size: 12px; color: #5f5e5e; }
+.result-price { font-family: 'Noto Serif', serif; font-size: 20px; color: var(--gold); }
+.result-card-title {
+  font-family: 'Noto Serif', serif; font-size: 28px; font-weight: 400;
+  color: var(--dark); margin-bottom: 12px;
+}
+.result-card-desc {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 400;
+  color: var(--text-mid); line-height: 1.7; margin-bottom: 16px;
+}
+.result-items-list { margin-bottom: 20px; }
+.result-items-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Manrope', sans-serif; font-size: 14px; color: var(--dark);
+  padding: 8px 0; border-bottom: 1px solid rgba(209,197,180,0.2);
+}
+.result-items-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
+
+/* Result desktop */
+.result-desktop-body { max-width: 1280px; margin: 0 auto; padding: 0 48px 80px; }
+.result-desktop-header { padding: 48px 0 32px; }
+.result-desktop-title {
+  font-family: 'Noto Serif', serif; font-size: 48px; font-weight: 400;
+  color: var(--dark); margin-bottom: 8px;
+}
+.result-desktop-card { display: flex; gap: 0; background: rgba(251,249,246,0.4); overflow: hidden; }
+.result-desktop-card-img {
+  width: 480px; flex-shrink: 0;
+  background: url('../assets/images/result-bg.png') center/cover no-repeat;
+  background-color: #f0eee9; min-height: 400px;
+}
+.result-desktop-card-content { flex: 1; padding: 48px; }
+.result-desktop-card-title {
+  font-family: 'Noto Serif', serif; font-size: 36px; font-weight: 400;
+  color: var(--dark); margin: 12px 0;
+}
+
+/* DESKTOP MEDIA QUERY */
 @media (min-width: 769px) {
   /* Home */
   .home-mobile { display: none; }
   .home-desktop { display: block; }
+
+  /* Product */
+  .product-mobile { display: none; }
+  .product-desktop { display: block; }
+
+  /* Detail */
+  .detail-mobile { display: none; }
+  .detail-desktop { display: block; }
+
+  /* Cart */
+  .cart-mobile { display: none; }
+  .cart-desktop { display: block; }
+
+  /* Checkout */
+  .checkout-mobile { display: none; }
+  .checkout-desktop { display: block; }
+
+  /* AI Chef */
+  .aichef-mobile { display: none; }
+  .aichef-desktop { display: block; }
+
+  /* Result */
+  .result-mobile { display: none; }
+  .result-desktop { display: block; }
+
+  /* Checkout place btn override */
+  .checkout-place-btn { margin: 0; width: 100%; }
 }
+
+/* IMAGE PLACEHOLDERS (gradient fallbacks when no image file) */
+
+/* SCROLLBAR HIDE (for category nav overflow) */
+.product-desktop-nav::-webkit-scrollbar { display: none; }
+.product-desktop-nav { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* SMOOTH TRANSITIONS */
+.menu-item-card { transition: background 0.15s; }
+.menu-item-card:hover { background: rgba(209,197,180,0.1); }
+.menu-card-desktop:hover .menu-card-add-btn { transform: scale(1.1); }
+.menu-card-add-btn { transition: transform 0.2s; }
+
+/* TOPNAV LIGHT (confirmation page) */
+.topnav-light {
+  background: rgba(253,252,249,0.9);
+}
+
+/* MOBILE: ensure page fills screen */
+@media (max-width: 768px) {
+  .topnav { display: none; }
+  .footer { display: none; }
+  .confirmation-wrap .topnav { display: flex; }
+  .aichef-mobile .topnav,
+  .result-mobile .topnav { display: none; }
+}
+
+/* MENU SECTION HEADERS (category dividers) */
+.menu-section-header {
+  padding: 24px 32px 8px;
+  border-top: 1px solid rgba(209,197,180,0.3);
+  margin-top: 8px;
+}
+.menu-section-header:first-child { border-top: none; margin-top: 0; }
+.menu-section-label {
+  font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase;
+}
+
+/* Desktop section header spans full grid width */
+.menu-section-header.desktop {
+  padding: 40px 0 12px; grid-column: 1 / -1;
+  border-top: 1px solid rgba(209,197,180,0.3); margin-top: 0;
+}
+.menu-section-header.desktop:first-child { border-top: none; padding-top: 0; }
+
+/* Each category's grid of cards */
+.menu-section-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Override: menu-grid-desktop is now a flex column of (header + grid) pairs */
+.menu-grid {
+  display: block; padding-bottom: 80px;
+}
+
+/* DESKTOP CARD QTY CONTROL (overlaid on card image) */
+.menu-card-qty-ctrl {
+  position: absolute; bottom: 8px; right: 8px;
+  display: flex; align-items: center; gap: 0;
+  background: rgba(27,28,25,0.85); backdrop-filter: blur(4px);
+  border-radius: 2px; overflow: hidden;
+}
+.menu-card-qty-btn {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  color: #fff; font-size: 18px; font-weight: 300;
+  transition: background 0.15s;
+}
+.menu-card-qty-btn:hover { background: rgba(255,255,255,0.15); }
+.menu-card-qty-num {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600;
+  color: #fff; padding: 0 10px; min-width: 28px; text-align: center;
+}
+
+/* DETAIL PAGE QTY BAR */
+.detail-qty-bar {
+  display: flex; align-items: center; gap: 0;
+  width: 100%; background: var(--gold-light);
+}
+.detail-qty-btn {
+  width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  color: #fff; font-size: 22px; font-weight: 300;
+  transition: background 0.15s;
+}
+.detail-qty-btn:hover { background: rgba(0,0,0,0.1); }
+.detail-qty-num {
+  flex: 1; text-align: center;
+  font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; color: #fff;
+}
+.detail-qty-total {
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 400; color: #fff;
+  padding: 0 20px;
+}
+.detail-qty-bar .add-bar-divider { background: rgba(255,255,255,0.3); }
+
+/* DETAIL PAGE DESKTOP BACK BUTTON */
+.detail-desktop-back {
+  padding: 24px 0 0;
+}
+.detail-back-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--gold); background: none; border: none; cursor: pointer;
+  padding: 8px 0; transition: opacity 0.2s;
+  letter-spacing: 0.5px;
+}
+.detail-back-btn:hover { opacity: 0.7; }
+
+/* DESKTOP NAV INNER (tabs + search side by side) */
+.product-desktop-nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1280px; margin: 0 auto; padding: 0 48px;
+}
+/* override: nav is now inside nav-inner, not directly in wrap */
+.product-desktop-nav-wrap .product-desktop-nav {
+  max-width: none; margin: 0; padding: 0; flex: 1;
+}
+
+/* Desktop search bar */
+.desktop-search-bar {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border-light); padding: 8px 14px;
+  background: var(--bg); flex-shrink: 0; min-width: 200px;
+}
+.desktop-search-input {
+  border: none; background: transparent; outline: none;
+  font-family: 'Manrope', sans-serif; font-size: 13px; color: var(--dark);
+  width: 160px;
+}
+.desktop-search-input::placeholder { color: rgba(27,28,25,0.35); }
+
+/* MOBILE AI CHEF FAB */
+.aichef-fab {
+  position: fixed; bottom: 92px; right: 24px; z-index: 200;
+  display: flex; align-items: center; gap: 6px;
+  background: var(--dark-nav); color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 1px; padding: 10px 16px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* MOBILE AI CHEF BUTTON (in header, right of logo) */
+.mobile-aichef-btn {
+  font-family: 'Manrope', sans-serif; font-size: 9px; font-weight: 600;
+  letter-spacing: 1.5px; color: var(--dark-nav);
+  background: none; border: 1px solid rgba(30,47,42,0.3);
+  padding: 6px 10px; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-aichef-btn:hover { background: var(--dark-nav); color: #fff; }
+
+/* Remove the old floating aichef-fab if present */
+.aichef-fab { display: none; }
