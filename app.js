@@ -1,32 +1,4 @@
 (function () {
-  /* DATA */
-  var MENU_ITEMS = [
-    // A La Carte
-    { id: 'kingfish-nigiri',    name: 'Kingfish Nigiri',        price: 5.8,  sub: 'A la carte', category: 'A La Carte',    tags: ['HIGH PROTEIN'],               desc: 'Delicate slices of premium kingfish over hand-pressed vinegared rice. Clean, buttery, and distinctly oceanic.',                                                                                                                                img: 'assets/images/kingfish.svg',      color: '#ddd5c8' },
-    { id: 'hotate-nigiri',      name: 'Hotate Nigiri',          price: 8,    sub: 'A la carte', category: 'A La Carte',    tags: ['SHELLFISH'],                  desc: 'Hokkaido scallop nigiri — sweet, tender, and lightly seared. A seasonal highlight from the northern waters.',                                                                                                                                    img: 'assets/images/hotate.svg',        color: '#e2ddd5' },
-    { id: 'ama-ebi-nigiri',     name: 'Ama Ebi Nigiri',         price: 7.5,  sub: 'A la carte', category: 'A La Carte',    tags: ['SHELLFISH', 'HIGH PROTEIN'],  desc: 'Sweet shrimp nigiri served raw, with a delicate sweetness and firm texture that melts on the palate.',                                                                                                                                              img: 'assets/images/ama-ebi.svg',       color: '#e8ddd0' },
-    { id: 'toro-nigiri',        name: 'Toro Nigiri',            price: 12,   sub: 'A la carte', category: 'A La Carte',    tags: ['HIGH PROTEIN'],               desc: 'Fatty tuna belly nigiri — rich, buttery, and deeply flavoured. One of the most prized cuts in Japanese cuisine.',                                                                                                                                    img: 'assets/images/toro.png',          color: '#e0d8cc' },
-    // Sushi Pack
-    { id: 'sushi-pack-8',       name: 'Sushi Pack 8',           price: 38,   sub: '8 pieces',   category: 'Sushi Pack',    tags: ['HIGH PROTEIN'],               desc: 'Eight pieces of seasonal nigiri, selected by our chef each morning. A balanced introduction to the Hinoki style.',                                                                                                                                    img: 'assets/images/sushi-pack.png',    color: '#e8e0d4' },
-    { id: 'sushi-pack-16',      name: 'Sushi Pack 16',          price: 72,   sub: '16 pieces',  category: 'Sushi Pack',    tags: ['HIGH PROTEIN'],               desc: 'Sixteen pieces of premium nigiri — ideal for sharing. Includes seasonal fish, scallop, and prawn selections.',                                                                                                                                      img: 'assets/images/sushi-pack-lg.png', color: '#ddd0c4' },
-    // Nigiri Pack
-    { id: 'nigiri-pack-classic',name: 'Classic Nigiri Pack',    price: 48,   sub: '10 pieces',  category: 'Nigiri Pack',   tags: ['HIGH PROTEIN', 'GLUTEN FREE'],desc: 'Ten pieces of Edomae-style nigiri. Salmon, tuna, kingfish, scallop, and prawn — each pressed by hand over seasoned rice.',                                                                                                                          img: 'assets/images/nigiri-pack.png',   color: '#e4dcd0' },
-    { id: 'nigiri-pack-premium',name: 'Premium Nigiri Pack',    price: 78,   sub: '10 pieces',  category: 'Nigiri Pack',   tags: ['HIGH PROTEIN'],               desc: 'Ten pieces featuring premium cuts: toro, uni, wagyu, and seasonal specials. The definitive Hinoki nigiri experience.',                                                                                                                               img: 'assets/images/nigiri-premium.png',color: '#d8d0c4' },
-    // Hoso Maki Pack
-    { id: 'hoso-maki-salmon',   name: 'Salmon Hoso Maki',       price: 14,   sub: '6 pieces',   category: 'Hoso Maki Pack',tags: ['HIGH PROTEIN'],               desc: 'Thin rolls of fresh salmon wrapped in seasoned rice and nori. Clean, simple, and deeply satisfying.',                                                                                                                                              img: 'assets/images/hoso-salmon.png',   color: '#e8ddd4' },
-    { id: 'hoso-maki-tuna',     name: 'Tuna Hoso Maki',         price: 14,   sub: '6 pieces',   category: 'Hoso Maki Pack',tags: ['HIGH PROTEIN'],               desc: 'Classic tuna hosomaki — lean, savoury, and precise. A staple of the Japanese sushi tradition.',                                                                                                                                                   img: 'assets/images/hoso-tuna.png',     color: '#e0d4cc' },
-    { id: 'hoso-maki-cucumber', name: 'Cucumber Hoso Maki',     price: 10,   sub: '6 pieces',   category: 'Hoso Maki Pack',tags: ['VEGAN', 'GLUTEN FREE'],       desc: 'Crisp cucumber wrapped in vinegared rice and nori. Light, refreshing, and a perfect palate cleanser.',                                                                                                                                              img: 'assets/images/hoso-cucumber.png', color: '#d8e0d4' },
-    // Deka Maki Pack
-    { id: 'deka-maki-spicy',    name: 'Spicy Tuna Deka Maki',   price: 22,   sub: '8 pieces',   category: 'Deka Maki Pack',tags: ['HIGH PROTEIN', 'SPICY'],      desc: 'Thick rolls of spicy tuna with cucumber and avocado. Bold, satisfying, and built for those who like heat.',                                                                                                                                         img: 'assets/images/deka-spicy.png',    color: '#e4d8cc' },
-    { id: 'deka-maki-prawn',    name: 'Prawn Tempura Deka Maki',price: 24,   sub: '8 pieces',   category: 'Deka Maki Pack',tags: ['SHELLFISH'],                  desc: 'Crispy prawn tempura with avocado and house sauce, wrapped in seasoned rice and nori. A crowd favourite.',                                                                                                                                       img: 'assets/images/deka-prawn.png',    color: '#ece0d4' },
-    // Vegan
-    { id: 'vegan-pack',         name: 'Vegan Sushi Pack',        price: 32,   sub: '10 pieces',  category: 'Vegan',         tags: ['VEGAN', 'GLUTEN FREE'],       desc: 'Ten pieces of plant-based nigiri and maki — avocado, pickled daikon, cucumber, and seasonal vegetables over seasoned rice.',                                                                                                                          img: 'assets/images/vegan-pack.png',    color: '#d4ddd0' },
-    { id: 'vegan-inari',        name: 'Inari Sushi',             price: 18,   sub: '6 pieces',   category: 'Vegan',         tags: ['VEGAN'],                      desc: 'Sweet tofu pouches filled with seasoned rice. A beloved Japanese classic — soft, subtly sweet, and deeply comforting.',                                                                                                                             img: 'assets/images/inari.png',         color: '#e0dcc8' },
-    // Platter
-    { id: 'platter-small',      name: 'Hinoki Platter (Small)',  price: 85,   sub: 'Serves 2',   category: 'Platter',       tags: ['HIGH PROTEIN'],               desc: 'A curated selection for two: nigiri, hosomaki, and sashimi. Composed by our chef to showcase the breadth of the Hinoki menu.',                                                                                                                      img: 'assets/images/platter-sm.png',    color: '#e8e0d4' },
-    { id: 'platter-large',      name: 'Hinoki Platter (Large)',  price: 155,  sub: 'Serves 4',   category: 'Platter',       tags: ['HIGH PROTEIN'],               desc: 'The full Hinoki experience for four. Premium nigiri, deka maki, sashimi, and seasonal specials — a complete Japanese feast.',                                                                                                                     img: 'assets/images/platter-lg.png',    color: '#ddd0c4' }
-  ];
-
   // Desktop tab categories (matches HTML cat-tab buttons)
   var CATEGORIES_DESKTOP = ['A La Carte', 'Sushi Pack', 'Nigiri Pack', 'Hoso Maki Pack', 'Deka Maki Pack', 'Vegan', 'Platter'];
   // Mobile category buttons (grouped)
@@ -269,5 +241,324 @@
     var tagsHtml = item.tags.map(function (t) {
       return '<span class="detail-tag">' + t + '</span>';
     }).join('');
+
+    // Mobile
+    var mImg = $('detail-hero-img-mobile');
+    if (mImg) mImg.style.cssText = 'background-color:' + item.color + ';background-image:url(' + item.img + ')';
+    var mTags = $('detail-tags-mobile');
+    if (mTags) mTags.innerHTML = tagsHtml;
+    var mTitle = $('detail-title-mobile');
+    if (mTitle) mTitle.textContent = item.name;
+    var mPrice = $('detail-price-mobile');
+    if (mPrice) mPrice.textContent = formatPrice(item.price);
+    var mDesc = document.querySelector('#page-product-page .detail-mobile .detail-desc');
+    if (mDesc) mDesc.textContent = item.desc;
+    var mBarPrice = $('detail-bar-price-mobile');
+    if (mBarPrice) mBarPrice.textContent = formatPrice(item.price);
+
+    // Desktop
+    var dImg = $('detail-hero-img-desktop');
+    if (dImg) dImg.style.cssText = 'background-color:' + item.color + ';background-image:url(' + item.img + ')';
+    var dTags = $('detail-tags-desktop');
+    if (dTags) dTags.innerHTML = tagsHtml;
+    var dTitle = $('detail-title-desktop');
+    if (dTitle) dTitle.textContent = item.name;
+    var dPrice = $('detail-price-desktop');
+    if (dPrice) dPrice.textContent = formatPrice(item.price);
+    var dDesc = document.querySelector('#page-product-page .detail-desktop .detail-desc');
+    if (dDesc) dDesc.textContent = item.desc;
+    var dBarPrice = $('detail-bar-price-desktop');
+    if (dBarPrice) dBarPrice.textContent = formatPrice(item.price);
+    var dBread = $('detail-breadcrumb-name');
+    if (dBread) dBread.textContent = item.name.toUpperCase();
+    updateDetailPageControls();
   }
-}());
+  
+  /* RENDER CART */
+  function renderCart() {
+    renderCartMobile();
+    renderCartDesktop();
+  }
+
+  function renderCartMobile() {
+    var container = $('cart-items-mobile');
+    if (!container) return;
+    var items = Object.entries(cart);
+    if (items.length === 0) {
+      container.innerHTML = '<p style="padding:32px;font-family:Manrope,sans-serif;color:var(--text-mid)">Your cart is empty.</p>';
+      renderCartSummary('cart-summary-rows-mobile', 'cart-summary-total-mobile');
+      return;
+    }
+    var html = '';
+    items.forEach(function (entry) {
+      var id = entry[0], qty = entry[1];
+      var item = MENU_ITEMS.find(function (m) { return m.id === id; });
+      if (!item) return;
+      html += '<div class="cart-item">';
+      html += '<div class="cart-item-img" style="background-color:' + item.color + ';background-image:url(' + item.img + ')"></div>';
+      html += '<div class="cart-item-info">';
+      html += '<div class="cart-item-name">' + item.name + '</div>';
+      html += '<div class="cart-item-sub">' + item.sub + '</div>';
+      html += '<div class="cart-item-price">' + formatPrice(item.price * qty) + '</div>';
+      html += '<div class="cart-item-controls">';
+      html += '<div class="cart-qty-border">';
+      html += '<button class="cart-qty-btn" data-dec="' + id + '">−</button>';
+      html += '<span class="cart-qty-num">' + String(qty).padStart(2,'0') + '</span>';
+      html += '<button class="cart-qty-btn" data-inc="' + id + '">+</button>';
+      html += '</div>';
+      html += '<button class="cart-remove-btn" data-remove="' + id + '">REMOVE</button>';
+      html += '</div></div></div>';
+    });
+    container.innerHTML = html;
+    renderCartSummary('cart-summary-rows-mobile', 'cart-summary-total-mobile');
+  }
+
+  function renderCartDesktop() {
+    var container = $('cart-items-desktop');
+    if (!container) return;
+    var items = Object.entries(cart);
+    if (items.length === 0) {
+      container.innerHTML = '<p style="padding:32px 0;font-family:Manrope,sans-serif;color:var(--text-mid)">Your cart is empty.</p>';
+      renderCartSummary('cart-summary-rows-desktop', 'cart-summary-total-desktop');
+      return;
+    }
+    var html = '';
+    items.forEach(function (entry) {
+      var id = entry[0], qty = entry[1];
+      var item = MENU_ITEMS.find(function (m) { return m.id === id; });
+      if (!item) return;
+      html += '<div class="cart-item">';
+      html += '<div class="cart-item-img" style="background-color:' + item.color + ';background-image:url(' + item.img + ')"></div>';
+      html += '<div class="cart-item-info">';
+      html += '<div class="cart-item-name">' + item.name + '</div>';
+      html += '<div class="cart-item-sub">' + item.sub + '</div>';
+      html += '<div class="cart-item-price">' + formatPrice(item.price * qty) + '</div>';
+      html += '<div class="cart-item-controls">';
+      html += '<div class="cart-qty-border">';
+      html += '<button class="cart-qty-btn" data-dec="' + id + '">−</button>';
+      html += '<span class="cart-qty-num">' + String(qty).padStart(2,'0') + '</span>';
+      html += '<button class="cart-qty-btn" data-inc="' + id + '">+</button>';
+      html += '</div>';
+      html += '<button class="cart-remove-btn" data-remove="' + id + '">REMOVE</button>';
+      html += '</div></div></div>';
+    });
+    container.innerHTML = html;
+    renderCartSummary('cart-summary-rows-desktop', 'cart-summary-total-desktop');
+  }
+
+  function renderCartSummary(rowsId, totalId) {
+    var subtotal = getCartTotal();
+    var tax = +(subtotal * 0.04).toFixed(2);
+    var total = subtotal + tax;
+    var rowsEl = $(rowsId);
+    if (rowsEl) {
+      rowsEl.innerHTML =
+        '<div class="cart-summary-row"><span>SUBTOTAL</span><span>' + formatPrice(subtotal) + '</span></div>' +
+        '<div class="cart-summary-row"><span>ESTIMATE taxes</span><span>' + formatPrice(tax) + '</span></div>';
+    }
+    var totalEl = $(totalId);
+    if (totalEl) {
+      totalEl.innerHTML =
+        '<span class="cart-total-label">Total</span>' +
+        '<span class="cart-total-val">' + formatPrice(total) + '</span>';
+    }
+  }
+
+  /* RENDER CHECKOUT */
+  function renderCheckout() {
+    var items = Object.entries(cart);
+    var subtotal = getCartTotal();
+    var tax = +(subtotal * 0.04).toFixed(2);
+    var total = subtotal + tax;
+
+    function itemsHtml() {
+      return items.map(function (entry) {
+        var id = entry[0], qty = entry[1];
+        var item = MENU_ITEMS.find(function (m) { return m.id === id; });
+        if (!item) return '';
+        return '<div class="checkout-item-row">' +
+          '<div><div class="checkout-item-name">' + item.name + '</div>' +
+          '<div class="checkout-item-sub">' + item.sub + '</div></div>' +
+          '<div class="checkout-item-price">' + formatPrice(item.price * qty) + '</div></div>';
+      }).join('');
+    }
+
+    function totalsHtml() {
+      return '<div class="checkout-total-row"><span>Subtotal</span><span>' + formatPrice(subtotal) + '</span></div>' +
+        '<div class="checkout-total-row"><span>TAXES & FEES</span><span>' + formatPrice(tax) + '</span></div>' +
+        '<div class="checkout-total-final"><span class="checkout-total-label">Total</span><span class="checkout-total-val">' + formatPrice(total) + '</span></div>';
+    }
+
+    var mItems = $('checkout-items-mobile');
+    if (mItems) mItems.innerHTML = itemsHtml();
+    var mTotals = $('checkout-totals-mobile');
+    if (mTotals) mTotals.innerHTML = totalsHtml();
+
+    var dItems = $('checkout-items-desktop');
+    if (dItems) dItems.innerHTML = itemsHtml();
+    var dTotals = $('checkout-totals-desktop');
+    if (dTotals) dTotals.innerHTML = totalsHtml();
+  }
+
+  /* RENDER CONFIRMATION */
+  function renderConfirmation() {
+    var sub = $('confirmation-sub');
+    if (sub) sub.textContent = 'Order #HNK-' + Math.floor(10000 + Math.random() * 90000) + ' • Estimated pick up time ' + selectedTime;
+
+    var container = $('confirmation-items');
+    if (!container) return;
+
+    // Show snapshotted order — cart may already be cleared
+    var html = '';
+    orderSnapshot.forEach(function (entry) {
+      var id = entry[0], qty = entry[1];
+      var item = MENU_ITEMS.find(function (m) { return m.id === id; });
+      if (!item) return;
+      html += '<div class="confirmation-item">';
+      html += '<span class="confirmation-item-name">' + item.name + '</span>';
+      html += '<span class="confirmation-item-qty">' + qty + 'x</span>';
+      html += '</div>';
+    });
+    container.innerHTML = html || '<p style="font-family:Manrope,sans-serif;color:var(--text-mid);padding:16px 0">No items.</p>';
+  }
+
+  /* CART STATE */
+  function addToCart(itemId) {
+    cart[itemId] = (cart[itemId] || 0) + 1;
+    updateCartBadges();
+    updateCardControls(itemId);
+  }
+
+  function incCart(itemId) {
+    cart[itemId] = (cart[itemId] || 0) + 1;
+    updateCartBadges();
+    updateCardControls(itemId);
+    if (currentPage === 'cart') renderCart();
+  }
+
+  function decCart(itemId) {
+    if (!cart[itemId]) return;
+    cart[itemId]--;
+    if (cart[itemId] <= 0) delete cart[itemId];
+    updateCartBadges();
+    updateCardControls(itemId);
+    if (currentPage === 'cart') renderCart();
+  }
+
+  // Surgically update the qty controls on both mobile and desktop cards for one item
+  function updateCardControls(itemId) {
+    var qty = cart[itemId] || 0;
+
+    // Mobile card
+    var mCard = document.querySelector('#menu-list-mobile .menu-item-card[data-item="' + itemId + '"]');
+    if (mCard) {
+      var mCtrl = mCard.querySelector('.menu-item-qty-ctrl, .menu-item-add-btn');
+      if (mCtrl) {
+        if (qty === 0) {
+          mCtrl.outerHTML = '<button class="menu-item-add-btn" data-add="' + itemId + '" aria-label="Add to cart">' +
+            '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+            '</button>';
+        } else {
+          mCtrl.outerHTML = '<div class="menu-item-qty-ctrl">' +
+            '<button class="qty-btn" data-dec="' + itemId + '">−</button>' +
+            '<span class="qty-num">' + qty + '</span>' +
+            '<button class="qty-btn" data-inc="' + itemId + '">+</button>' +
+            '</div>';
+        }
+      }
+    }
+
+    // Desktop card
+    var dCard = document.querySelector('#menu-grid-desktop .menu-card-desktop[data-item="' + itemId + '"]');
+    if (dCard) {
+      var dImg = dCard.querySelector('.menu-card-img');
+      if (dImg) {
+        var dCtrl = dImg.querySelector('.menu-card-qty-ctrl, .menu-card-add-btn');
+        if (dCtrl) {
+          if (qty === 0) {
+            dCtrl.outerHTML = '<button class="menu-card-add-btn" data-add="' + itemId + '" aria-label="Add to cart">' +
+              '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+              '</button>';
+          } else {
+            dCtrl.outerHTML = '<div class="menu-card-qty-ctrl">' +
+              '<button class="menu-card-qty-btn" data-dec="' + itemId + '">−</button>' +
+              '<span class="menu-card-qty-num">' + qty + '</span>' +
+              '<button class="menu-card-qty-btn" data-inc="' + itemId + '">+</button>' +
+              '</div>';
+          }
+        }
+      }
+    }
+  }
+
+  function removeFromCart(itemId) {
+    delete cart[itemId];
+    updateCartBadges();
+    if (currentPage === 'cart') renderCart();
+  }
+
+  function updateDetailPageControls() {
+    if (!selectedItem) return;
+    var qty = cart[selectedItem.id] || 0;
+    var price = formatPrice(selectedItem.price);
+
+    // Mobile add bar
+    var mBar = document.querySelector('.detail-add-bar');
+    if (mBar) {
+      if (qty === 0) {
+        mBar.innerHTML = '<button class="btn-add-to-cart">' +
+          '<span>ADD TO CART</span>' +
+          '<div class="add-bar-divider"></div>' +
+          '<span class="add-bar-price">' + price + '</span>' +
+          '</button>';
+      } else {
+        mBar.innerHTML = '<div class="detail-qty-bar">' +
+          '<button class="detail-qty-btn" data-detail-dec="1">−</button>' +
+          '<span class="detail-qty-num">' + qty + '</span>' +
+          '<button class="detail-qty-btn" data-detail-inc="1">+</button>' +
+          '<div class="add-bar-divider"></div>' +
+          '<span class="detail-qty-total">' + formatPrice(selectedItem.price * qty) + '</span>' +
+          '</div>';
+      }
+    }
+
+    // Desktop add section
+    var dAdd = document.querySelector('.detail-desktop-add');
+    if (dAdd) {
+      if (qty === 0) {
+        dAdd.innerHTML = '<button class="btn-add-to-cart">' +
+          '<span>ADD TO CART</span>' +
+          '<div class="add-bar-divider"></div>' +
+          '<span class="add-bar-price">' + price + '</span>' +
+          '</button>' +
+          '<span class="prices-note">PRICES EXCLUDE LOCAL TAXES</span>';
+      } else {
+        dAdd.innerHTML = '<div class="detail-qty-bar">' +
+          '<button class="detail-qty-btn" data-detail-dec="1">−</button>' +
+          '<span class="detail-qty-num">' + qty + '</span>' +
+          '<button class="detail-qty-btn" data-detail-inc="1">+</button>' +
+          '<div class="add-bar-divider"></div>' +
+          '<span class="detail-qty-total">' + formatPrice(selectedItem.price * qty) + '</span>' +
+          '</div>' +
+          '<button class="btn-outline" data-nav="cart">VIEW CART</button>' +
+          '<span class="prices-note">PRICES EXCLUDE LOCAL TAXES</span>';
+      }
+    }
+  }
+
+  function updateCartBadges() {
+    var count = getCartCount();
+    var badges = $$('.cart-badge');
+    badges.forEach(function (b) {
+      b.textContent = count;
+      b.style.display = count > 0 ? 'flex' : 'none';
+    });
+    var fab = $('cart-fab');
+    var fabBadge = $('cart-fab-badge');
+    if (fab) {
+      if (count > 0) { fab.classList.add('visible'); }
+      else { fab.classList.remove('visible'); }
+    }
+    if (fabBadge) fabBadge.textContent = count;
+  }
+})();
